@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('license_plate');
-            $table->string('brand');
+            $table->string('make');
             $table->string('model');
             $table->decimal('price');
             $table->integer('mileage');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('production_year')->nullable();
             $table->integer('weight')->nullable();
             $table->string('color')->nullable();
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->timestamp('sold_at')->nullable();
             $table->integer('views')->default(0);
             $table->timestamps();
