@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->decimal('price');
-            $table->integer('mileage');
+            $table->integer('mileage')->nullable();
             $table->integer('seats')->nullable();
             $table->integer('doors')->nullable();
             $table->integer('production_year')->nullable();

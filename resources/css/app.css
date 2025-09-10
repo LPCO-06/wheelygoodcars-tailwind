@@ -1,3 +1,107 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1{
+    font-size: xx-large;
+}
+
+.car-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Ruimte tussen de rijen */
+    padding: 20px;
+}
+
+.car-item {
+    display: flex;
+    align-items: center; /* Verticaal centreren van items in de rij */
+    padding: 0px 20px 0px 0px;
+    border: 1px solid #bbb; /* Lichte rand */
+    background-color: #fff; /* Witte achtergrond */
+    transition: background-color 0.3s ease-out;
+}
+
+.car-image img {
+    width: 100px; /* Vaste breedte zoals in de afbeelding */
+    height: 100px; /* Vaste hoogte zoals in de afbeelding */
+    border-right: 1px solid #bbb;
+    margin-right: 20px; /* Ruimte tussen de afbeelding en de tekst */
+}
+
+.car-info-wrapper {
+    display: flex;
+    justify-content: space-between; /* Verdeel de ruimte tussen de elementen */
+    align-items: center;
+    width: 100%; /* Neemt de volledige breedte van de container */
+}
+
+.status-wrapper {
+    width: 80px; /* Vaste breedte voor de status-kolom */
+    text-align: center;
+    padding-left: 10px; /* Ruimte tussen de rand en de tekst */
+}
+
+.status-text {
+    font-size: 12px;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.status-text-sold {
+    font-size: 12px;
+    color: white;
+    background-color: red;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.car-details {
+    display: flex;
+    flex-grow: 1; /* Neemt de beschikbare ruimte in */
+    gap: 40px;
+    font-weight: bold;
+    color: #333;
+}
+
+.car-details span:nth-child(2) { /* Dit is de prijs */
+    color: #4CAF50; /* Groene kleur voor de prijs */
+    font-size: 1.1em;
+}
+
+.car-tags {
+    display: flex;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    white-space: nowrap; /* Zorgt ervoor dat de tekst niet over meerdere regels loopt */
+}
+
+.car-actions {
+    margin-left: 20px; /* Ruimte tussen de tags en de acties */
+}
+
+.view-button {
+    background-color: #007BFF; /* Blauwe achtergrondkleur */
+    color: white; /* Witte tekstkleur */
+    padding: 8px 12px; /* Padding voor de knop */
+    border-radius: 5px; /* Afgeronde hoeken */
+    text-decoration: none; /* Geen onderlijning */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #0056b3; /* Donkerdere blauwe kleur bij hover */
+}

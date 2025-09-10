@@ -1,9 +1,9 @@
 <x-app-layout>
 
-<h1>Alle auto's</h1>
+<h1>Mijn aanbod</h1>
 
 @if ($cars->isEmpty())
-    <p>Er zijn op dit moment geen auto's te koop.</p>
+    <p>U heeft op dit moment geen auto's te koop staan.</p>
 @else
     <div class="car-list">
         @foreach ($cars as $car)
@@ -19,11 +19,7 @@
 
                     <div class="status-wrapper">
                         <span>{{ $car->license_plate }}</span>
-                        @if ($car->sold_at)
-                            <span class="status-text-sold">Verkocht</span>
-                        @else
-                            <span class="status-text">Te koop</span>
-                        @endif
+                        <span class="status-text">{{ $car->sold_at ? 'Verkocht' : 'Te koop' }}</span>
                     </div>
 
                     <div class="car-details">
@@ -33,15 +29,19 @@
                     </div>
 
                     <div class="car-tags">
-                        @foreach($car->tags as $tag)
-                            <span class="tag" style="background: #{{ $tag->color }}; color: {{ $tag->contrast }}" class="inline-block px-2 py-1 rounded mr-2">{{ $tag->name }}</span>
-                        @endforeach
+                        <span class="tag">tag</span>
+                        <span class="tag">tag</span>
+                        <span class="tag">tag</span>
                     </div>
 
                     <div class="car-actions">
-                        <a href="{{ route('cars.show', $car->id) }}" class="px-3 py-2 rounded mt-2 view-button">
-                            Bekijk details
-                        </a>
+                        <form action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" style="background-color: red;" class="text-white px-3 py-2 rounded mt-2">
+                                Verwijderen
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
