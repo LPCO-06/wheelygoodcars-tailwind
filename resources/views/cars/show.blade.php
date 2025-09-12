@@ -2,7 +2,7 @@
 
 <div class="max-w-2xl mx-auto p-6 bg-white rounded shadow">
     <h1 class="text-2xl font-bold mb-4">{{ $car->brand }} {{ $car->model }}</h1>
-    <img src="{{ $car->image }}" alt="Car image" class="mb-4 w-full h-64 object-cover rounded">
+    <img src="https://picsum.photos/seed/{{$car->id}}/500/300" alt="Momenteel geen foto beschikbaar." class="mb-4 w-full h-64 object-cover rounded">
     <ul class="mb-4">
         <li><strong>Kenteken:</strong> {{ $car->license_plate }}</li>
         <li><strong>Fabrikant:</strong> {{ $car->brand }}</li>
