@@ -11,7 +11,7 @@
                 <div class="car-info-wrapper">
                     <div class="car-image">
                         @if ($car->image)
-                            <img src="{{ asset('storage/' . $car->image) }}" alt="100 x 100" style="max-width: 300px;">
+                            <img src="https://picsum.photos/seed/{{$car->id}}/100" alt="100 x 100" style="max-width: 300px;">
                         @else
                             <p>Geen afbeelding beschikbaar</p>
                         @endif

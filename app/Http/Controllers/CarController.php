@@ -107,7 +107,7 @@ class CarController extends Controller
             'color' => 'required',
             'mileage' => 'required|integer',
             'price' => 'required|numeric',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:4096', // Max 4MB
         ]);
 
         $car = new Car();
