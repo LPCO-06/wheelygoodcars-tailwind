@@ -7,6 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/', [CarController::class, 'index'])->name('home');
+Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/cars/create', [CarController::class, 'createStep1'])->name('cars.create.step1');
@@ -15,9 +18,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cars/create/details', [CarController::class, 'postStep2'])->name('cars.create.step2.post');
 
     Route::get('/offers', [CarController::class, 'myCars'])->name('offers');
-    Route::get('/', [CarController::class, 'index'])->name('home');
-
-    Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
 
     Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
 });
